@@ -1,22 +1,13 @@
-def hticketdetecrot(ar):
-    ht = 0
-    inct = 0
-    uht = 0
-    i = 0
-    while not (i == len(ar)):
-        arr = ar[i]
-        i += 1
-        if len(arr) == 6 and not arr[0] == '0':
-            if int(arr[0])+int(arr[1])+int(arr[2]) == int(arr[3])+int(arr[4])+int(arr[5]):
-                ht += 1
-            else:
-                uht += 1
-        else:
-            inct += 1
-    print('hpt:', ht, " ", 'uhpt:', uht, " ", 'inct:', inct)
-    return 0
+def hticketdetecrot():
+    happyTickets = 0
+    for i in range(100000, 900001):
+        ticket = [i]
+        ticketString = str(ticket)
+        if int(ticketString[1])+int(ticketString[2])+int(ticketString[3]) == int(ticketString[4])+int(ticketString[5])+int(ticketString[6]):
+             happyTickets += 1
+    return happyTickets
 
 
 if __name__ == "__main__":
-    arr = ['123123', '100100', '012345', '2323']
-    hticketdetecrot(arr)
+    coutTickets = hticketdetecrot()
+    print(coutTickets)
